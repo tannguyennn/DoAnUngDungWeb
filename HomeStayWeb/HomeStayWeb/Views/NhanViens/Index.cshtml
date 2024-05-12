@@ -1,0 +1,51 @@
+﻿@model IEnumerable<HomeStayWeb.Models.NhanVien>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenNV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailNV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SDTNV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MKNV)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDTNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MKNV)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDNV }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDNV }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDNV })
+        </td>
+    </tr>
+}
+
+</table>

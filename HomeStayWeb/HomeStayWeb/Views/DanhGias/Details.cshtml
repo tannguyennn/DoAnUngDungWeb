@@ -1,0 +1,50 @@
+﻿@model HomeStayWeb.Models.DanhGia
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DanhGia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoiDung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayDanhGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayDanhGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Homestay.TenHomestay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Homestay.TenHomestay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KhachHang.TenKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KhachHang.TenKH)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDDanhGia }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,50 @@
+﻿@model HomeStayWeb.Models.NhanVien
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NhanVien</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDTNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDTNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MKNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MKNV)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDNV }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

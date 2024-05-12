@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="homestayModelStoreContainer" CdmEntityContainer="homestayEntities">
+    <EntitySetMapping Name="DanhGias">
+      <EntityTypeMapping TypeName="homestayModel.DanhGia">
+        <MappingFragment StoreEntitySet="DanhGia">
+          <ScalarProperty Name="IDDanhGia" ColumnName="IDDanhGia" />
+          <ScalarProperty Name="IDHomestay" ColumnName="IDHomestay" />
+          <ScalarProperty Name="IDKH" ColumnName="IDKH" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="NgayDanhGia" ColumnName="NgayDanhGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DatPhongs">
+      <EntityTypeMapping TypeName="homestayModel.DatPhong">
+        <MappingFragment StoreEntitySet="DatPhong">
+          <ScalarProperty Name="IDDP" ColumnName="IDDP" />
+          <ScalarProperty Name="IDKH" ColumnName="IDKH" />
+          <ScalarProperty Name="IDPhong" ColumnName="IDPhong" />
+          <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
+          <ScalarProperty Name="NgayCheckIn" ColumnName="NgayCheckIn" />
+          <ScalarProperty Name="NgayCheckOut" ColumnName="NgayCheckOut" />
+          <ScalarProperty Name="TrangThaiDatPhong" ColumnName="TrangThaiDatPhong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Homestays">
+      <EntityTypeMapping TypeName="homestayModel.Homestay">
+        <MappingFragment StoreEntitySet="Homestays">
+          <ScalarProperty Name="IDHomestay" ColumnName="IDHomestay" />
+          <ScalarProperty Name="TenHomestay" ColumnName="TenHomestay" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangs">
+      <EntityTypeMapping TypeName="homestayModel.KhachHang">
+        <MappingFragment StoreEntitySet="KhachHang">
+          <ScalarProperty Name="IDKH" ColumnName="IDKH" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="EmailKH" ColumnName="EmailKH" />
+          <ScalarProperty Name="SDTKH" ColumnName="SDTKH" />
+          <ScalarProperty Name="MKKH" ColumnName="MKKH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanViens">
+      <EntityTypeMapping TypeName="homestayModel.NhanVien">
+        <MappingFragment StoreEntitySet="NhanVien">
+          <ScalarProperty Name="IDNV" ColumnName="IDNV" />
+          <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+          <ScalarProperty Name="EmailNV" ColumnName="EmailNV" />
+          <ScalarProperty Name="SDTNV" ColumnName="SDTNV" />
+          <ScalarProperty Name="MKNV" ColumnName="MKNV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phongs">
+      <EntityTypeMapping TypeName="homestayModel.Phong">
+        <MappingFragment StoreEntitySet="Phong">
+          <ScalarProperty Name="IDPhong" ColumnName="IDPhong" />
+          <ScalarProperty Name="SoPhong" ColumnName="SoPhong" />
+          <ScalarProperty Name="IDHomestay" ColumnName="IDHomestay" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThanhToans">
+      <EntityTypeMapping TypeName="homestayModel.ThanhToan">
+        <MappingFragment StoreEntitySet="ThanhToan">
+          <ScalarProperty Name="IDThanhToan" ColumnName="IDThanhToan" />
+          <ScalarProperty Name="IDDP" ColumnName="IDDP" />
+          <ScalarProperty Name="IDNV" ColumnName="IDNV" />
+          <ScalarProperty Name="NgayThanhToan" ColumnName="NgayThanhToan" />
+          <ScalarProperty Name="Sotien" ColumnName="Sotien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
