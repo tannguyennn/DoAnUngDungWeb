@@ -22,12 +22,14 @@ namespace HomeStayWeb.Models
     
         public int IDPhong { get; set; }
         public string SoPhong { get; set; }
-        public Nullable<int> IDHomestay { get; set; }
         public string TrangThai { get; set; }
         public decimal Gia { get; set; }
+        public Nullable<int> IDLP { get; set; }
+        public string HinhAnh { get; set; }
+        public string MoTa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DatPhong> DatPhongs { get; set; }
-        public virtual Homestay Homestay { get; set; }
+        public virtual LoaiPhong LoaiPhong { get; set; }
     }
 }

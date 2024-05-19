@@ -123,8 +123,8 @@
     <Compile Include="Controllers\DanhGiasController.cs" />
     <Compile Include="Controllers\DatPhongsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\HomestaysController.cs" />
     <Compile Include="Controllers\KhachHangsController.cs" />
+    <Compile Include="Controllers\LoaiPhongsController.cs" />
     <Compile Include="Controllers\NhanViensController.cs" />
     <Compile Include="Controllers\PhongsController.cs" />
     <Compile Include="Controllers\ThanhToansController.cs" />
@@ -137,10 +137,10 @@
     <Compile Include="Models\DatPhong.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Homestay.cs">
+    <Compile Include="Models\KhachHang.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\KhachHang.cs">
+    <Compile Include="Models\LoaiPhong.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
@@ -236,8 +236,8 @@
     <Content Include="Images\video.jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -250,13 +250,6 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\Css\lib\owlcarousel\LICENSE" />
     <Content Include="Content\Css\lib\waypoints\links.php" />
     <Content Include="Content\Css\scss\bootstrap.scss" />
@@ -341,6 +334,13 @@
     <Content Include="Content\Css\scss\bootstrap\scss\_type.scss" />
     <Content Include="Content\Css\scss\bootstrap\scss\_utilities.scss" />
     <Content Include="Content\Css\scss\bootstrap\scss\_variables.scss" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
@@ -365,11 +365,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\KhachHangs\Create.cshtml" />
-    <Content Include="Views\KhachHangs\Delete.cshtml" />
-    <Content Include="Views\KhachHangs\Details.cshtml" />
-    <Content Include="Views\KhachHangs\Edit.cshtml" />
-    <Content Include="Views\KhachHangs\Index.cshtml" />
+    <Content Include="Views\ThanhToans\Create.cshtml" />
+    <Content Include="Views\ThanhToans\Delete.cshtml" />
+    <Content Include="Views\ThanhToans\Details.cshtml" />
+    <Content Include="Views\ThanhToans\Edit.cshtml" />
+    <Content Include="Views\ThanhToans\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\DanhGias\Create.cshtml" />
     <Content Include="Views\DanhGias\Delete.cshtml" />
     <Content Include="Views\DanhGias\Details.cshtml" />
@@ -380,11 +383,16 @@
     <Content Include="Views\DatPhongs\Details.cshtml" />
     <Content Include="Views\DatPhongs\Edit.cshtml" />
     <Content Include="Views\DatPhongs\Index.cshtml" />
-    <Content Include="Views\Homestays\Create.cshtml" />
-    <Content Include="Views\Homestays\Delete.cshtml" />
-    <Content Include="Views\Homestays\Details.cshtml" />
-    <Content Include="Views\Homestays\Edit.cshtml" />
-    <Content Include="Views\Homestays\Index.cshtml" />
+    <Content Include="Views\KhachHangs\Create.cshtml" />
+    <Content Include="Views\KhachHangs\Delete.cshtml" />
+    <Content Include="Views\KhachHangs\Details.cshtml" />
+    <Content Include="Views\KhachHangs\Edit.cshtml" />
+    <Content Include="Views\KhachHangs\Index.cshtml" />
+    <Content Include="Views\LoaiPhongs\Create.cshtml" />
+    <Content Include="Views\LoaiPhongs\Delete.cshtml" />
+    <Content Include="Views\LoaiPhongs\Details.cshtml" />
+    <Content Include="Views\LoaiPhongs\Edit.cshtml" />
+    <Content Include="Views\LoaiPhongs\Index.cshtml" />
     <Content Include="Views\NhanViens\Create.cshtml" />
     <Content Include="Views\NhanViens\Delete.cshtml" />
     <Content Include="Views\NhanViens\Details.cshtml" />
@@ -395,14 +403,6 @@
     <Content Include="Views\Phongs\Details.cshtml" />
     <Content Include="Views\Phongs\Edit.cshtml" />
     <Content Include="Views\Phongs\Index.cshtml" />
-    <Content Include="Views\ThanhToans\Create.cshtml" />
-    <Content Include="Views\ThanhToans\Delete.cshtml" />
-    <Content Include="Views\ThanhToans\Details.cshtml" />
-    <Content Include="Views\ThanhToans\Edit.cshtml" />
-    <Content Include="Views\ThanhToans\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Services.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

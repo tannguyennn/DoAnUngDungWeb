@@ -10,107 +10,107 @@ using HomeStayWeb.Models;
 
 namespace HomeStayWeb.Controllers
 {
-    public class HomestaysController : Controller
+    public class LoaiPhongsController : Controller
     {
-        private homestayEntities db = new homestayEntities();
+        private homestayEntities1 db = new homestayEntities1();
 
-        // GET: Homestays
+        // GET: LoaiPhongs
         public ActionResult Index()
         {
-            return View(db.Homestays.ToList());
+            return View(db.LoaiPhongs.ToList());
         }
 
-        // GET: Homestays/Details/5
+        // GET: LoaiPhongs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Homestay homestay = db.Homestays.Find(id);
-            if (homestay == null)
+            LoaiPhong loaiPhong = db.LoaiPhongs.Find(id);
+            if (loaiPhong == null)
             {
                 return HttpNotFound();
             }
-            return View(homestay);
+            return View(loaiPhong);
         }
 
-        // GET: Homestays/Create
+        // GET: LoaiPhongs/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Homestays/Create
+        // POST: LoaiPhongs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDHomestay,TenHomestay,TrangThai,HinhAnh")] Homestay homestay)
+        public ActionResult Create([Bind(Include = "IDLP,TenLP")] LoaiPhong loaiPhong)
         {
             if (ModelState.IsValid)
             {
-                db.Homestays.Add(homestay);
+                db.LoaiPhongs.Add(loaiPhong);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(homestay);
+            return View(loaiPhong);
         }
 
-        // GET: Homestays/Edit/5
+        // GET: LoaiPhongs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Homestay homestay = db.Homestays.Find(id);
-            if (homestay == null)
+            LoaiPhong loaiPhong = db.LoaiPhongs.Find(id);
+            if (loaiPhong == null)
             {
                 return HttpNotFound();
             }
-            return View(homestay);
+            return View(loaiPhong);
         }
 
-        // POST: Homestays/Edit/5
+        // POST: LoaiPhongs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDHomestay,TenHomestay,TrangThai,HinhAnh")] Homestay homestay)
+        public ActionResult Edit([Bind(Include = "IDLP,TenLP")] LoaiPhong loaiPhong)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(homestay).State = EntityState.Modified;
+                db.Entry(loaiPhong).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(homestay);
+            return View(loaiPhong);
         }
 
-        // GET: Homestays/Delete/5
+        // GET: LoaiPhongs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Homestay homestay = db.Homestays.Find(id);
-            if (homestay == null)
+            LoaiPhong loaiPhong = db.LoaiPhongs.Find(id);
+            if (loaiPhong == null)
             {
                 return HttpNotFound();
             }
-            return View(homestay);
+            return View(loaiPhong);
         }
 
-        // POST: Homestays/Delete/5
+        // POST: LoaiPhongs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Homestay homestay = db.Homestays.Find(id);
-            db.Homestays.Remove(homestay);
+            LoaiPhong loaiPhong = db.LoaiPhongs.Find(id);
+            db.LoaiPhongs.Remove(loaiPhong);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -12,12 +12,12 @@ namespace HomeStayWeb.Controllers
 {
     public class DanhGiasController : Controller
     {
-        private homestayEntities db = new homestayEntities();
+        private homestayEntities1 db = new homestayEntities1();
 
         // GET: DanhGias
         public ActionResult Index()
         {
-            var danhGias = db.DanhGias.Include(d => d.Homestay).Include(d => d.KhachHang);
+            var danhGias = db.DanhGias.Include(d => d.KhachHang);
             return View(danhGias.ToList());
         }
 
@@ -39,7 +39,6 @@ namespace HomeStayWeb.Controllers
         // GET: DanhGias/Create
         public ActionResult Create()
         {
-            ViewBag.IDHomestay = new SelectList(db.Homestays, "IDHomestay", "TenHomestay");
             ViewBag.IDKH = new SelectList(db.KhachHangs, "IDKH", "TenKH");
             return View();
         }
@@ -49,7 +48,7 @@ namespace HomeStayWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDDanhGia,IDHomestay,IDKH,NoiDung,NgayDanhGia")] DanhGia danhGia)
+        public ActionResult Create([Bind(Include = "IDDanhGia,IDKH,NoiDung,NgayDanhGia")] DanhGia danhGia)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +57,6 @@ namespace HomeStayWeb.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IDHomestay = new SelectList(db.Homestays, "IDHomestay", "TenHomestay", danhGia.IDHomestay);
             ViewBag.IDKH = new SelectList(db.KhachHangs, "IDKH", "TenKH", danhGia.IDKH);
             return View(danhGia);
         }
@@ -75,7 +73,6 @@ namespace HomeStayWeb.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.IDHomestay = new SelectList(db.Homestays, "IDHomestay", "TenHomestay", danhGia.IDHomestay);
             ViewBag.IDKH = new SelectList(db.KhachHangs, "IDKH", "TenKH", danhGia.IDKH);
             return View(danhGia);
         }
@@ -85,7 +82,7 @@ namespace HomeStayWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDDanhGia,IDHomestay,IDKH,NoiDung,NgayDanhGia")] DanhGia danhGia)
+        public ActionResult Edit([Bind(Include = "IDDanhGia,IDKH,NoiDung,NgayDanhGia")] DanhGia danhGia)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +90,6 @@ namespace HomeStayWeb.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IDHomestay = new SelectList(db.Homestays, "IDHomestay", "TenHomestay", danhGia.IDHomestay);
             ViewBag.IDKH = new SelectList(db.KhachHangs, "IDKH", "TenKH", danhGia.IDKH);
             return View(danhGia);
         }

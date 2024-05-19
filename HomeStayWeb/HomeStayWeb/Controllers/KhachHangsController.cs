@@ -12,7 +12,7 @@ namespace HomeStayWeb.Controllers
 {
     public class KhachHangsController : Controller
     {
-        private homestayEntities db = new homestayEntities();
+        private homestayEntities1 db = new homestayEntities1();
 
         // GET: KhachHangs
         public ActionResult Index()

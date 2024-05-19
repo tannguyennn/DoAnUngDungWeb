@@ -12,12 +12,12 @@ namespace HomeStayWeb.Controllers
 {
     public class PhongsController : Controller
     {
-        private homestayEntities db = new homestayEntities();
+        private homestayEntities1 db = new homestayEntities1();
 
         // GET: Phongs
         public ActionResult Index()
         {
-            var phongs = db.Phongs.Include(p => p.Homestay);
+            var phongs = db.Phongs.Include(p => p.LoaiPhong);
             return View(phongs.ToList());
         }
 
@@ -39,7 +39,7 @@ namespace HomeStayWeb.Controllers
         // GET: Phongs/Create
         public ActionResult Create()
         {
-            ViewBag.IDHomestay = new SelectList(db.Homestays, "IDHomestay", "TenHomestay");
+            ViewBag.IDLP = new SelectList(db.LoaiPhongs, "IDLP", "TenLP");
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace HomeStayWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDPhong,SoPhong,IDHomestay,TrangThai,Gia")] Phong phong)
+        public ActionResult Create([Bind(Include = "IDPhong,SoPhong,TrangThai,Gia,IDLP,HinhAnh,MoTa")] Phong phong)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace HomeStayWeb.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IDHomestay = new SelectList(db.Homestays, "IDHomestay", "TenHomestay", phong.IDHomestay);
+            ViewBag.IDLP = new SelectList(db.LoaiPhongs, "IDLP", "TenLP", phong.IDLP);
             return View(phong);
         }
 
@@ -73,7 +73,7 @@ namespace HomeStayWeb.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.IDHomestay = new SelectList(db.Homestays, "IDHomestay", "TenHomestay", phong.IDHomestay);
+            ViewBag.IDLP = new SelectList(db.LoaiPhongs, "IDLP", "TenLP", phong.IDLP);
             return View(phong);
         }
 
@@ -82,7 +82,7 @@ namespace HomeStayWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDPhong,SoPhong,IDHomestay,TrangThai,Gia")] Phong phong)
+        public ActionResult Edit([Bind(Include = "IDPhong,SoPhong,TrangThai,Gia,IDLP,HinhAnh,MoTa")] Phong phong)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace HomeStayWeb.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IDHomestay = new SelectList(db.Homestays, "IDHomestay", "TenHomestay", phong.IDHomestay);
+            ViewBag.IDLP = new SelectList(db.LoaiPhongs, "IDLP", "TenLP", phong.IDLP);
             return View(phong);
         }
 

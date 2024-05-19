@@ -13,10 +13,10 @@ namespace HomeStayWeb.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class homestayEntities : DbContext
+    public partial class homestayEntities1 : DbContext
     {
-        public homestayEntities()
-            : base("name=homestayEntities")
+        public homestayEntities1()
+            : base("name=homestayEntities1")
         {
         }
     
@@ -27,8 +27,8 @@ namespace HomeStayWeb.Models
     
         public virtual DbSet<DanhGia> DanhGias { get; set; }
         public virtual DbSet<DatPhong> DatPhongs { get; set; }
-        public virtual DbSet<Homestay> Homestays { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
+        public virtual DbSet<LoaiPhong> LoaiPhongs { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<Phong> Phongs { get; set; }
         public virtual DbSet<ThanhToan> ThanhToans { get; set; }

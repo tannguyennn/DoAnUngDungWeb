@@ -12,22 +12,17 @@ namespace HomeStayWeb.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Homestay
+    public partial class LoaiPhong
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Homestay()
+        public LoaiPhong()
         {
-            this.DanhGias = new HashSet<DanhGia>();
             this.Phongs = new HashSet<Phong>();
         }
     
-        public int IDHomestay { get; set; }
-        public string TenHomestay { get; set; }
-        public string TrangThai { get; set; }
-        public string HinhAnh { get; set; }
+        public int IDLP { get; set; }
+        public string TenLP { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DanhGia> DanhGias { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Phong> Phongs { get; set; }
     }

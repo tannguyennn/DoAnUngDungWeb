@@ -4,21 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9043ada13677487dae777a4a6a519721" Name="Diagram1">
-        <EntityTypeShape EntityType="homestayModel.DanhGia" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="homestayModel.DatPhong" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="homestayModel.Homestay" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="homestayModel.KhachHang" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="homestayModel.NhanVien" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="homestayModel.Phong" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="homestayModel.ThanhToan" Width="1.5" PointX="7.5" PointY="7.875" IsExpanded="true" />
-        <AssociationConnector Association="homestayModel.FK__DanhGia__IDHomes__5629CD9C" ManuallyRouted="false" />
-        <AssociationConnector Association="homestayModel.FK__DanhGia__IDKH__571DF1D5" ManuallyRouted="false" />
+      <Diagram DiagramId="9897db36a6564b3da7978e741eb53493" Name="Diagram1">
+        <EntityTypeShape EntityType="homestayModel.DanhGia" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="homestayModel.DatPhong" Width="1.5" PointX="6" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="homestayModel.KhachHang" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="homestayModel.LoaiPhong" Width="1.5" PointX="1.5" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="homestayModel.NhanVien" Width="1.5" PointX="6" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="homestayModel.Phong" Width="1.5" PointX="3.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="homestayModel.ThanhToan" Width="1.5" PointX="8.25" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="homestayModel.FK__DanhGia__IDKH__5629CD9C" ManuallyRouted="false" />
         <AssociationConnector Association="homestayModel.FK__DatPhong__IDKH__52593CB8" ManuallyRouted="false" />
         <AssociationConnector Association="homestayModel.FK__DatPhong__IDPhon__534D60F1" ManuallyRouted="false" />
-        <AssociationConnector Association="homestayModel.FK__ThanhToan__IDDP__59FA5E80" ManuallyRouted="false" />
-        <AssociationConnector Association="homestayModel.FK__Phong__IDHomesta__4F7CD00D" ManuallyRouted="false" />
-        <AssociationConnector Association="homestayModel.FK__ThanhToan__IDNV__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="homestayModel.FK__ThanhToan__IDDP__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="homestayModel.FK__Phong__IDLP__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="homestayModel.FK__ThanhToan__IDNV__59FA5E80" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

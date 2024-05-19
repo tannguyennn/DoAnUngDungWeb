@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="homestayModelStoreContainer" CdmEntityContainer="homestayEntities">
+  <EntityContainerMapping StorageEntityContainer="homestayModelStoreContainer" CdmEntityContainer="homestayEntities1">
     <EntitySetMapping Name="DanhGias">
       <EntityTypeMapping TypeName="homestayModel.DanhGia">
         <MappingFragment StoreEntitySet="DanhGia">
           <ScalarProperty Name="IDDanhGia" ColumnName="IDDanhGia" />
-          <ScalarProperty Name="IDHomestay" ColumnName="IDHomestay" />
           <ScalarProperty Name="IDKH" ColumnName="IDKH" />
           <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
           <ScalarProperty Name="NgayDanhGia" ColumnName="NgayDanhGia" />
@@ -25,16 +24,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Homestays">
-      <EntityTypeMapping TypeName="homestayModel.Homestay">
-        <MappingFragment StoreEntitySet="Homestays">
-          <ScalarProperty Name="IDHomestay" ColumnName="IDHomestay" />
-          <ScalarProperty Name="TenHomestay" ColumnName="TenHomestay" />
-          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
-          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="KhachHangs">
       <EntityTypeMapping TypeName="homestayModel.KhachHang">
         <MappingFragment StoreEntitySet="KhachHang">
@@ -43,6 +32,14 @@
           <ScalarProperty Name="EmailKH" ColumnName="EmailKH" />
           <ScalarProperty Name="SDTKH" ColumnName="SDTKH" />
           <ScalarProperty Name="MKKH" ColumnName="MKKH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiPhongs">
+      <EntityTypeMapping TypeName="homestayModel.LoaiPhong">
+        <MappingFragment StoreEntitySet="LoaiPhong">
+          <ScalarProperty Name="IDLP" ColumnName="IDLP" />
+          <ScalarProperty Name="TenLP" ColumnName="TenLP" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -62,9 +59,11 @@
         <MappingFragment StoreEntitySet="Phong">
           <ScalarProperty Name="IDPhong" ColumnName="IDPhong" />
           <ScalarProperty Name="SoPhong" ColumnName="SoPhong" />
-          <ScalarProperty Name="IDHomestay" ColumnName="IDHomestay" />
           <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="IDLP" ColumnName="IDLP" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

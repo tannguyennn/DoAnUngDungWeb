@@ -15,12 +15,10 @@ namespace HomeStayWeb.Models
     public partial class DanhGia
     {
         public int IDDanhGia { get; set; }
-        public Nullable<int> IDHomestay { get; set; }
         public Nullable<int> IDKH { get; set; }
         public string NoiDung { get; set; }
         public System.DateTime NgayDanhGia { get; set; }
     
-        public virtual Homestay Homestay { get; set; }
         public virtual KhachHang KhachHang { get; set; }
     }
 }

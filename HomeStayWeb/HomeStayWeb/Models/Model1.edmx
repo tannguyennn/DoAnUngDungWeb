@@ -10,7 +10,6 @@
             <PropertyRef Name="IDDanhGia" />
           </Key>
           <Property Name="IDDanhGia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IDHomestay" Type="int" />
           <Property Name="IDKH" Type="int" />
           <Property Name="NoiDung" Type="text" Nullable="false" />
           <Property Name="NgayDanhGia" Type="date" Nullable="false" />
@@ -25,16 +24,7 @@
           <Property Name="NgayDat" Type="date" Nullable="false" />
           <Property Name="NgayCheckIn" Type="date" Nullable="false" />
           <Property Name="NgayCheckOut" Type="date" Nullable="false" />
-          <Property Name="TrangThaiDatPhong" Type="varchar" MaxLength="20" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Homestays">
-          <Key>
-            <PropertyRef Name="IDHomestay" />
-          </Key>
-          <Property Name="IDHomestay" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenHomestay" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="TrangThai" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="HinhAnh" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TrangThaiDatPhong" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="KhachHang">
           <Key>
@@ -45,6 +35,13 @@
           <Property Name="EmailKH" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="SDTKH" Type="varchar" MaxLength="20" />
           <Property Name="MKKH" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoaiPhong">
+          <Key>
+            <PropertyRef Name="IDLP" />
+          </Key>
+          <Property Name="IDLP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenLP" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="NhanVien">
           <Key>
@@ -62,9 +59,11 @@
           </Key>
           <Property Name="IDPhong" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SoPhong" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="IDHomestay" Type="int" />
-          <Property Name="TrangThai" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TrangThai" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Gia" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IDLP" Type="int" />
+          <Property Name="HinhAnh" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="MoTa" Type="text" Nullable="false" />
         </EntityType>
         <EntityType Name="ThanhToan">
           <Key>
@@ -76,19 +75,7 @@
           <Property Name="NgayThanhToan" Type="date" Nullable="false" />
           <Property Name="Sotien" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
-        <Association Name="FK__DanhGia__IDHomes__5629CD9C">
-          <End Role="Homestays" Type="Self.Homestays" Multiplicity="0..1" />
-          <End Role="DanhGia" Type="Self.DanhGia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Homestays">
-              <PropertyRef Name="IDHomestay" />
-            </Principal>
-            <Dependent Role="DanhGia">
-              <PropertyRef Name="IDHomestay" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__DanhGia__IDKH__571DF1D5">
+        <Association Name="FK__DanhGia__IDKH__5629CD9C">
           <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
           <End Role="DanhGia" Type="Self.DanhGia" Multiplicity="*" />
           <ReferentialConstraint>
@@ -124,19 +111,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Phong__IDHomesta__4F7CD00D">
-          <End Role="Homestays" Type="Self.Homestays" Multiplicity="0..1" />
+        <Association Name="FK__Phong__IDLP__4F7CD00D">
+          <End Role="LoaiPhong" Type="Self.LoaiPhong" Multiplicity="0..1" />
           <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Homestays">
-              <PropertyRef Name="IDHomestay" />
+            <Principal Role="LoaiPhong">
+              <PropertyRef Name="IDLP" />
             </Principal>
             <Dependent Role="Phong">
-              <PropertyRef Name="IDHomestay" />
+              <PropertyRef Name="IDLP" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ThanhToan__IDDP__59FA5E80">
+        <Association Name="FK__ThanhToan__IDDP__59063A47">
           <End Role="DatPhong" Type="Self.DatPhong" Multiplicity="0..1" />
           <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
           <ReferentialConstraint>
@@ -148,7 +135,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ThanhToan__IDNV__5AEE82B9">
+        <Association Name="FK__ThanhToan__IDNV__59FA5E80">
           <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
           <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
           <ReferentialConstraint>
@@ -163,16 +150,12 @@
         <EntityContainer Name="homestayModelStoreContainer">
           <EntitySet Name="DanhGia" EntityType="Self.DanhGia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DatPhong" EntityType="Self.DatPhong" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Homestays" EntityType="Self.Homestays" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoaiPhong" EntityType="Self.LoaiPhong" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Phong" EntityType="Self.Phong" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThanhToan" EntityType="Self.ThanhToan" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__DanhGia__IDHomes__5629CD9C" Association="Self.FK__DanhGia__IDHomes__5629CD9C">
-            <End Role="Homestays" EntitySet="Homestays" />
-            <End Role="DanhGia" EntitySet="DanhGia" />
-          </AssociationSet>
-          <AssociationSet Name="FK__DanhGia__IDKH__571DF1D5" Association="Self.FK__DanhGia__IDKH__571DF1D5">
+          <AssociationSet Name="FK__DanhGia__IDKH__5629CD9C" Association="Self.FK__DanhGia__IDKH__5629CD9C">
             <End Role="KhachHang" EntitySet="KhachHang" />
             <End Role="DanhGia" EntitySet="DanhGia" />
           </AssociationSet>
@@ -184,15 +167,15 @@
             <End Role="Phong" EntitySet="Phong" />
             <End Role="DatPhong" EntitySet="DatPhong" />
           </AssociationSet>
-          <AssociationSet Name="FK__Phong__IDHomesta__4F7CD00D" Association="Self.FK__Phong__IDHomesta__4F7CD00D">
-            <End Role="Homestays" EntitySet="Homestays" />
+          <AssociationSet Name="FK__Phong__IDLP__4F7CD00D" Association="Self.FK__Phong__IDLP__4F7CD00D">
+            <End Role="LoaiPhong" EntitySet="LoaiPhong" />
             <End Role="Phong" EntitySet="Phong" />
           </AssociationSet>
-          <AssociationSet Name="FK__ThanhToan__IDDP__59FA5E80" Association="Self.FK__ThanhToan__IDDP__59FA5E80">
+          <AssociationSet Name="FK__ThanhToan__IDDP__59063A47" Association="Self.FK__ThanhToan__IDDP__59063A47">
             <End Role="DatPhong" EntitySet="DatPhong" />
             <End Role="ThanhToan" EntitySet="ThanhToan" />
           </AssociationSet>
-          <AssociationSet Name="FK__ThanhToan__IDNV__5AEE82B9" Association="Self.FK__ThanhToan__IDNV__5AEE82B9">
+          <AssociationSet Name="FK__ThanhToan__IDNV__59FA5E80" Association="Self.FK__ThanhToan__IDNV__59FA5E80">
             <End Role="NhanVien" EntitySet="NhanVien" />
             <End Role="ThanhToan" EntitySet="ThanhToan" />
           </AssociationSet>
@@ -207,12 +190,10 @@
             <PropertyRef Name="IDDanhGia" />
           </Key>
           <Property Name="IDDanhGia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDHomestay" Type="Int32" />
           <Property Name="IDKH" Type="Int32" />
           <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NgayDanhGia" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Homestay" Relationship="Self.FK__DanhGia__IDHomes__5629CD9C" FromRole="DanhGia" ToRole="Homestays" />
-          <NavigationProperty Name="KhachHang" Relationship="Self.FK__DanhGia__IDKH__571DF1D5" FromRole="DanhGia" ToRole="KhachHang" />
+          <NavigationProperty Name="KhachHang" Relationship="Self.FK__DanhGia__IDKH__5629CD9C" FromRole="DanhGia" ToRole="KhachHang" />
         </EntityType>
         <EntityType Name="DatPhong">
           <Key>
@@ -224,21 +205,10 @@
           <Property Name="NgayDat" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="NgayCheckIn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="NgayCheckOut" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="TrangThaiDatPhong" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TrangThaiDatPhong" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="KhachHang" Relationship="Self.FK__DatPhong__IDKH__52593CB8" FromRole="DatPhong" ToRole="KhachHang" />
           <NavigationProperty Name="Phong" Relationship="Self.FK__DatPhong__IDPhon__534D60F1" FromRole="DatPhong" ToRole="Phong" />
-          <NavigationProperty Name="ThanhToans" Relationship="Self.FK__ThanhToan__IDDP__59FA5E80" FromRole="DatPhong" ToRole="ThanhToan" />
-        </EntityType>
-        <EntityType Name="Homestay">
-          <Key>
-            <PropertyRef Name="IDHomestay" />
-          </Key>
-          <Property Name="IDHomestay" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenHomestay" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="TrangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="HinhAnh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DanhGias" Relationship="Self.FK__DanhGia__IDHomes__5629CD9C" FromRole="Homestays" ToRole="DanhGia" />
-          <NavigationProperty Name="Phongs" Relationship="Self.FK__Phong__IDHomesta__4F7CD00D" FromRole="Homestays" ToRole="Phong" />
+          <NavigationProperty Name="ThanhToans" Relationship="Self.FK__ThanhToan__IDDP__59063A47" FromRole="DatPhong" ToRole="ThanhToan" />
         </EntityType>
         <EntityType Name="KhachHang">
           <Key>
@@ -249,8 +219,16 @@
           <Property Name="EmailKH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SDTKH" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="MKKH" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DanhGias" Relationship="Self.FK__DanhGia__IDKH__571DF1D5" FromRole="KhachHang" ToRole="DanhGia" />
+          <NavigationProperty Name="DanhGias" Relationship="Self.FK__DanhGia__IDKH__5629CD9C" FromRole="KhachHang" ToRole="DanhGia" />
           <NavigationProperty Name="DatPhongs" Relationship="Self.FK__DatPhong__IDKH__52593CB8" FromRole="KhachHang" ToRole="DatPhong" />
+        </EntityType>
+        <EntityType Name="LoaiPhong">
+          <Key>
+            <PropertyRef Name="IDLP" />
+          </Key>
+          <Property Name="IDLP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenLP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Phongs" Relationship="Self.FK__Phong__IDLP__4F7CD00D" FromRole="LoaiPhong" ToRole="Phong" />
         </EntityType>
         <EntityType Name="NhanVien">
           <Key>
@@ -261,7 +239,7 @@
           <Property Name="EmailNV" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SDTNV" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="MKNV" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="ThanhToans" Relationship="Self.FK__ThanhToan__IDNV__5AEE82B9" FromRole="NhanVien" ToRole="ThanhToan" />
+          <NavigationProperty Name="ThanhToans" Relationship="Self.FK__ThanhToan__IDNV__59FA5E80" FromRole="NhanVien" ToRole="ThanhToan" />
         </EntityType>
         <EntityType Name="Phong">
           <Key>
@@ -269,11 +247,13 @@
           </Key>
           <Property Name="IDPhong" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SoPhong" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="IDHomestay" Type="Int32" />
-          <Property Name="TrangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TrangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Gia" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IDLP" Type="Int32" />
+          <Property Name="HinhAnh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="DatPhongs" Relationship="Self.FK__DatPhong__IDPhon__534D60F1" FromRole="Phong" ToRole="DatPhong" />
-          <NavigationProperty Name="Homestay" Relationship="Self.FK__Phong__IDHomesta__4F7CD00D" FromRole="Phong" ToRole="Homestays" />
+          <NavigationProperty Name="LoaiPhong" Relationship="Self.FK__Phong__IDLP__4F7CD00D" FromRole="Phong" ToRole="LoaiPhong" />
         </EntityType>
         <EntityType Name="ThanhToan">
           <Key>
@@ -284,22 +264,10 @@
           <Property Name="IDNV" Type="Int32" />
           <Property Name="NgayThanhToan" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Sotien" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-          <NavigationProperty Name="DatPhong" Relationship="Self.FK__ThanhToan__IDDP__59FA5E80" FromRole="ThanhToan" ToRole="DatPhong" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK__ThanhToan__IDNV__5AEE82B9" FromRole="ThanhToan" ToRole="NhanVien" />
+          <NavigationProperty Name="DatPhong" Relationship="Self.FK__ThanhToan__IDDP__59063A47" FromRole="ThanhToan" ToRole="DatPhong" />
+          <NavigationProperty Name="NhanVien" Relationship="Self.FK__ThanhToan__IDNV__59FA5E80" FromRole="ThanhToan" ToRole="NhanVien" />
         </EntityType>
-        <Association Name="FK__DanhGia__IDHomes__5629CD9C">
-          <End Role="Homestays" Type="Self.Homestay" Multiplicity="0..1" />
-          <End Role="DanhGia" Type="Self.DanhGia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Homestays">
-              <PropertyRef Name="IDHomestay" />
-            </Principal>
-            <Dependent Role="DanhGia">
-              <PropertyRef Name="IDHomestay" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__DanhGia__IDKH__571DF1D5">
+        <Association Name="FK__DanhGia__IDKH__5629CD9C">
           <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
           <End Role="DanhGia" Type="Self.DanhGia" Multiplicity="*" />
           <ReferentialConstraint>
@@ -335,7 +303,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ThanhToan__IDDP__59FA5E80">
+        <Association Name="FK__ThanhToan__IDDP__59063A47">
           <End Role="DatPhong" Type="Self.DatPhong" Multiplicity="0..1" />
           <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
           <ReferentialConstraint>
@@ -347,19 +315,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Phong__IDHomesta__4F7CD00D">
-          <End Role="Homestays" Type="Self.Homestay" Multiplicity="0..1" />
+        <Association Name="FK__Phong__IDLP__4F7CD00D">
+          <End Role="LoaiPhong" Type="Self.LoaiPhong" Multiplicity="0..1" />
           <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Homestays">
-              <PropertyRef Name="IDHomestay" />
+            <Principal Role="LoaiPhong">
+              <PropertyRef Name="IDLP" />
             </Principal>
             <Dependent Role="Phong">
-              <PropertyRef Name="IDHomestay" />
+              <PropertyRef Name="IDLP" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ThanhToan__IDNV__5AEE82B9">
+        <Association Name="FK__ThanhToan__IDNV__59FA5E80">
           <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
           <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
           <ReferentialConstraint>
@@ -371,19 +339,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="homestayEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="homestayEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="DanhGias" EntityType="Self.DanhGia" />
           <EntitySet Name="DatPhongs" EntityType="Self.DatPhong" />
-          <EntitySet Name="Homestays" EntityType="Self.Homestay" />
           <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
+          <EntitySet Name="LoaiPhongs" EntityType="Self.LoaiPhong" />
           <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
           <EntitySet Name="Phongs" EntityType="Self.Phong" />
           <EntitySet Name="ThanhToans" EntityType="Self.ThanhToan" />
-          <AssociationSet Name="FK__DanhGia__IDHomes__5629CD9C" Association="Self.FK__DanhGia__IDHomes__5629CD9C">
-            <End Role="Homestays" EntitySet="Homestays" />
-            <End Role="DanhGia" EntitySet="DanhGias" />
-          </AssociationSet>
-          <AssociationSet Name="FK__DanhGia__IDKH__571DF1D5" Association="Self.FK__DanhGia__IDKH__571DF1D5">
+          <AssociationSet Name="FK__DanhGia__IDKH__5629CD9C" Association="Self.FK__DanhGia__IDKH__5629CD9C">
             <End Role="KhachHang" EntitySet="KhachHangs" />
             <End Role="DanhGia" EntitySet="DanhGias" />
           </AssociationSet>
@@ -395,15 +359,15 @@
             <End Role="Phong" EntitySet="Phongs" />
             <End Role="DatPhong" EntitySet="DatPhongs" />
           </AssociationSet>
-          <AssociationSet Name="FK__ThanhToan__IDDP__59FA5E80" Association="Self.FK__ThanhToan__IDDP__59FA5E80">
+          <AssociationSet Name="FK__ThanhToan__IDDP__59063A47" Association="Self.FK__ThanhToan__IDDP__59063A47">
             <End Role="DatPhong" EntitySet="DatPhongs" />
             <End Role="ThanhToan" EntitySet="ThanhToans" />
           </AssociationSet>
-          <AssociationSet Name="FK__Phong__IDHomesta__4F7CD00D" Association="Self.FK__Phong__IDHomesta__4F7CD00D">
-            <End Role="Homestays" EntitySet="Homestays" />
+          <AssociationSet Name="FK__Phong__IDLP__4F7CD00D" Association="Self.FK__Phong__IDLP__4F7CD00D">
+            <End Role="LoaiPhong" EntitySet="LoaiPhongs" />
             <End Role="Phong" EntitySet="Phongs" />
           </AssociationSet>
-          <AssociationSet Name="FK__ThanhToan__IDNV__5AEE82B9" Association="Self.FK__ThanhToan__IDNV__5AEE82B9">
+          <AssociationSet Name="FK__ThanhToan__IDNV__59FA5E80" Association="Self.FK__ThanhToan__IDNV__59FA5E80">
             <End Role="NhanVien" EntitySet="NhanViens" />
             <End Role="ThanhToan" EntitySet="ThanhToans" />
           </AssociationSet>
@@ -413,12 +377,11 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="homestayModelStoreContainer" CdmEntityContainer="homestayEntities">
+        <EntityContainerMapping StorageEntityContainer="homestayModelStoreContainer" CdmEntityContainer="homestayEntities1">
           <EntitySetMapping Name="DanhGias">
             <EntityTypeMapping TypeName="homestayModel.DanhGia">
               <MappingFragment StoreEntitySet="DanhGia">
                 <ScalarProperty Name="IDDanhGia" ColumnName="IDDanhGia" />
-                <ScalarProperty Name="IDHomestay" ColumnName="IDHomestay" />
                 <ScalarProperty Name="IDKH" ColumnName="IDKH" />
                 <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
                 <ScalarProperty Name="NgayDanhGia" ColumnName="NgayDanhGia" />
@@ -438,16 +401,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Homestays">
-            <EntityTypeMapping TypeName="homestayModel.Homestay">
-              <MappingFragment StoreEntitySet="Homestays">
-                <ScalarProperty Name="IDHomestay" ColumnName="IDHomestay" />
-                <ScalarProperty Name="TenHomestay" ColumnName="TenHomestay" />
-                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
-                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="KhachHangs">
             <EntityTypeMapping TypeName="homestayModel.KhachHang">
               <MappingFragment StoreEntitySet="KhachHang">
@@ -456,6 +409,14 @@
                 <ScalarProperty Name="EmailKH" ColumnName="EmailKH" />
                 <ScalarProperty Name="SDTKH" ColumnName="SDTKH" />
                 <ScalarProperty Name="MKKH" ColumnName="MKKH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoaiPhongs">
+            <EntityTypeMapping TypeName="homestayModel.LoaiPhong">
+              <MappingFragment StoreEntitySet="LoaiPhong">
+                <ScalarProperty Name="IDLP" ColumnName="IDLP" />
+                <ScalarProperty Name="TenLP" ColumnName="TenLP" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -475,9 +436,11 @@
               <MappingFragment StoreEntitySet="Phong">
                 <ScalarProperty Name="IDPhong" ColumnName="IDPhong" />
                 <ScalarProperty Name="SoPhong" ColumnName="SoPhong" />
-                <ScalarProperty Name="IDHomestay" ColumnName="IDHomestay" />
                 <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="Gia" ColumnName="Gia" />
+                <ScalarProperty Name="IDLP" ColumnName="IDLP" />
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
