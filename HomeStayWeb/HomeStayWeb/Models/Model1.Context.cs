@@ -13,10 +13,10 @@ namespace HomeStayWeb.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class homestayEntities1 : DbContext
+    public partial class homestayEntities2 : DbContext
     {
-        public homestayEntities1()
-            : base("name=homestayEntities1")
+        public homestayEntities2()
+            : base("name=homestayEntities2")
         {
         }
     

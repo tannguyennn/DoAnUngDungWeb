@@ -9,7 +9,7 @@ namespace HomeStayWeb.Controllers
 {
     public class HomeController : Controller
     {
-        private homestayEntities1 db = new homestayEntities1();
+        private homestayEntities2 db = new homestayEntities2();
         public ActionResult Index()
         {
             return View(db.Phongs.ToList());

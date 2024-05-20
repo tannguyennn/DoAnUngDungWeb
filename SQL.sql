@@ -99,10 +99,10 @@ INSERT INTO LoaiPhong (TenLP) VALUES
 -- Insert into Phong
 INSERT INTO Phong (SoPhong, TrangThai, Gia, IDLP, HinhAnh, MoTa) VALUES 
 ('101', 1, 500000, 1, 'room-1.jpg', N'Phòng tiêu chuẩn với tiện nghi cơ bản.'),
-('102', 0, 500000, 1, 'room-2.jpg', N'Phòng tiêu chuẩn đã được đặt.'),
+('102', 0, 500000, 1, 'room-2.jpg', N'Phòng tiêu chuẩn nội thất sang trọng.'),
 ('201', 1, 700000, 2, 'room-3.jpg', N'Phòng tiêu chuẩn nâng cao với tầm nhìn ra vườn.'),
 ('202', 1, 700000, 2, 'room-4.jpg', N'Phòng tiêu chuẩn nâng cao đã được đặt.'),
-('301', 0, 1500000, 3, 'room-5.jpg', N'Phòng cao cấp với nội thất sang trọng và tầm nhìn toàn cảnh.'),
+('301', 0, 1500000, 3, 'room-5.jpg', N'Phòng cao cấp với nội thất sang trọng.'),
 ('302', 0, 1500000, 3, 'room-6.jpg', N'Phòng cao cấp đã được đặt.'),
 ('401', 0, 3000000, 1, 'room-7.jpg', N'Phòng tiêu chuẩn với tiện nghi bổ sung.'),
 ('402', 1, 3000000, 2, 'room-8.jpg', N'Phòng tiêu chuẩn nâng cao đã được đặt.'),

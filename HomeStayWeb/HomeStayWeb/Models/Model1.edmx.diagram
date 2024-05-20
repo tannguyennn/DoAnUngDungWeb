@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9897db36a6564b3da7978e741eb53493" Name="Diagram1">
+      <Diagram DiagramId="110207b413644b3c83fea5e6c38d972a" Name="Diagram1">
         <EntityTypeShape EntityType="homestayModel.DanhGia" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="homestayModel.DatPhong" Width="1.5" PointX="6" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="homestayModel.KhachHang" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
@@ -12,12 +12,12 @@
         <EntityTypeShape EntityType="homestayModel.NhanVien" Width="1.5" PointX="6" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="homestayModel.Phong" Width="1.5" PointX="3.75" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="homestayModel.ThanhToan" Width="1.5" PointX="8.25" PointY="2.75" IsExpanded="true" />
-        <AssociationConnector Association="homestayModel.FK__DanhGia__IDKH__5629CD9C" ManuallyRouted="false" />
-        <AssociationConnector Association="homestayModel.FK__DatPhong__IDKH__52593CB8" ManuallyRouted="false" />
-        <AssociationConnector Association="homestayModel.FK__DatPhong__IDPhon__534D60F1" ManuallyRouted="false" />
-        <AssociationConnector Association="homestayModel.FK__ThanhToan__IDDP__59063A47" ManuallyRouted="false" />
-        <AssociationConnector Association="homestayModel.FK__Phong__IDLP__4F7CD00D" ManuallyRouted="false" />
-        <AssociationConnector Association="homestayModel.FK__ThanhToan__IDNV__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="homestayModel.FK__DanhGia__IDKH__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="homestayModel.FK__DatPhong__IDKH__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="homestayModel.FK__DatPhong__IDPhon__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="homestayModel.FK__ThanhToan__IDDP__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="homestayModel.FK__Phong__IDLP__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="homestayModel.FK__ThanhToan__IDNV__48CFD27E" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

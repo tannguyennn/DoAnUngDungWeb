@@ -22,7 +22,7 @@ namespace HomeStayWeb.Models
     
         public int IDPhong { get; set; }
         public string SoPhong { get; set; }
-        public string TrangThai { get; set; }
+        public Nullable<int> TrangThai { get; set; }
         public decimal Gia { get; set; }
         public Nullable<int> IDLP { get; set; }
         public string HinhAnh { get; set; }
