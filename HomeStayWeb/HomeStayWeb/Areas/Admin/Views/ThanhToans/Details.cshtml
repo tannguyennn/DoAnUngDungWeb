@@ -1,0 +1,51 @@
+﻿@model HomeStayWeb.Models.ThanhToan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ThanhToan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayThanhToan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayThanhToan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sotien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sotien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatPhong.TrangThaiDatPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatPhong.TrangThaiDatPhong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhanVien.TenNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhanVien.TenNV)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDThanhToan }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

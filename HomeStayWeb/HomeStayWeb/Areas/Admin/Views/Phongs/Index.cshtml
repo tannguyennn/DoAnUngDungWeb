@@ -1,0 +1,64 @@
+﻿@model IEnumerable<HomeStayWeb.Models.Phong>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SoPhong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrangThai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HinhAnh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiPhong.TenLP)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoPhong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrangThai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HinhAnh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiPhong.TenLP)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDPhong }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDPhong }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDPhong })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,51 @@
+﻿@model HomeStayWeb.Models.KhachHang
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KhachHang</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDTKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDTKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MKKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MKKH)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDKH }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

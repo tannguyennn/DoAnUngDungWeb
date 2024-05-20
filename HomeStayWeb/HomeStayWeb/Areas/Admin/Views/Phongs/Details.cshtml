@@ -1,0 +1,67 @@
+﻿@model HomeStayWeb.Models.Phong
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Phong</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SoPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoPhong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrangThai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrangThai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhAnh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HinhAnh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiPhong.TenLP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiPhong.TenLP)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDPhong }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|d:\\hoc_tap\\doanungdungweb\\homestayweb\\homestayweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|solutionrelative:homestayweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|d:\\hoc_tap\\doanungdungweb\\homestayweb\\homestayweb\\areas\\admin\\views\\danhgias\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|solutionrelative:homestayweb\\areas\\admin\\views\\danhgias\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|d:\\hoc_tap\\doanungdungweb\\homestayweb\\homestayweb\\areas\\admin\\views\\datphongs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|solutionrelative:homestayweb\\areas\\admin\\views\\datphongs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|d:\\hoc_tap\\doanungdungweb\\homestayweb\\homestayweb\\models\\datphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|solutionrelative:homestayweb\\models\\datphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -20,13 +28,39 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "HomeStayWeb\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "HomeStayWeb\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAoAAAA",
+              "DocumentMoniker": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Index.cshtml",
+              "RelativeDocumentMoniker": "HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Index.cshtml",
+              "ToolTip": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Index.cshtml",
+              "RelativeToolTip": "HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Index.cshtml",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAF4AAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-20T09:50:46.499Z",
+              "WhenOpened": "2024-05-20T14:00:39.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DatPhong.cs",
+              "DocumentMoniker": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Models\\DatPhong.cs",
+              "RelativeDocumentMoniker": "HomeStayWeb\\Models\\DatPhong.cs",
+              "ToolTip": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Models\\DatPhong.cs",
+              "RelativeToolTip": "HomeStayWeb\\Models\\DatPhong.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwBwAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T13:54:39.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Areas\\Admin\\Views\\DatPhongs\\Index.cshtml",
+              "RelativeDocumentMoniker": "HomeStayWeb\\Areas\\Admin\\Views\\DatPhongs\\Index.cshtml",
+              "ToolTip": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Areas\\Admin\\Views\\DatPhongs\\Index.cshtml",
+              "RelativeToolTip": "HomeStayWeb\\Areas\\Admin\\Views\\DatPhongs\\Index.cshtml",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAGEAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-20T13:54:21.122Z",
               "EditorCaption": ""
             }
           ]

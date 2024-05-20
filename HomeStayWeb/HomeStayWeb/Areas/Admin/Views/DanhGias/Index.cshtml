@@ -1,0 +1,109 @@
+﻿@model IEnumerable<HomeStayWeb.Models.DanhGia>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var grid = new WebGrid(Model, canPage: true, defaultSort: "IDDanhGia", rowsPerPage: 10);
+}
+<h2>DANH SÁCH NHÂN VIÊN</h2>
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<head>
+    <style type="text/css">
+        .grid-footer {
+            color: #000;
+            font: 17px Calibri;
+            text-align: center;
+            font-weight: bold;
+        }
+
+            .grid-footer a {
+                background-color: #ffffff;
+                color: blue;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                padding: 1px 10px 2px 10px;
+            }
+
+                .grid-footer a:active, a:hover {
+                    background-color: #ffffff;
+                    color: #FFAD33;
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                }
+
+        .alternatingRowStyle {
+            background-color: aliceblue;
+        }
+
+        table .table1 {
+            text-align: left;
+            margin-left: 0px;
+            margin-right: 0px;
+            width: 800px;
+        }
+
+        .tr, .td {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Index", "DanhGias", FormMethod.Get))
+        {
+            @Html.AntiForgeryToken()
+
+
+            <table class="table1" align="center">
+                <tr>
+                    <td>
+                        <div> Mã đánh giá</div>
+                    </td>
+                    <td>
+                        <input type="text" name="maNV" value="@ViewBag.IDDanhGia" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Họ tên khách hàng đánh giá</td>
+                    <td>
+                        <input type="text" name="tenNV" value="@ViewBag.TenKH" />
+                    </td>
+
+                </tr>
+
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" name="submit" value="Tìm kiếm" style="margin-left: 5px;width:100px;
+            background-color: blue;color:white" />
+                        <input type="button" name="Nhapmoi" value="Nhập mới" style="margin-left: 5px;width:100px;
+            background-color: blue;color:white" onclick="location.href='@Url.Action("Index", "DanhGias/Index")'" />
+
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+    <div id="gridContent">
+        @ViewBag.TB
+        @grid.GetHtml(
+            tableStyle: "table table-bordered table-hover",
+            footerStyle: "grid-footer",
+            fillEmptyRows: true,
+            mode: WebGridPagerModes.Numeric,
+            alternatingRowStyle: "alternatingRowStyle",
+              columns: new[]  // colums in grid
+             {
+         grid.Column("#",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
+        grid.Column("IDDanhGia","Mã đánh giá"),
+        grid.Column("KhachHang.TenKH","Tên khách hàng"),
+        grid.Column("NoiDung","Nội dung"),
+        grid.Column("NgayDanhGia","Ngày đánh giá"),
+        grid.Column(format: (item) => Html.ActionLink("Xem chi tiết", "Details","DanhGias", new { id = item.IDDanhGia },"DanhGiasController")),
+        grid.Column(format: (item) => Html.ActionLink("Chỉnh sửa", "Edit","DanhGias", new { id = item.IDDanhGia },"DanhGiasController")),
+        grid.Column(format: (item) => Html.ActionLink("Xóa", "Delete","DanhGias", new { id = item.IDDanhGia },"DanhGiasController")),
+        }
+       )
+    </div>
+</body>
