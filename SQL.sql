@@ -1,4 +1,5 @@
 ﻿CREATE DATABASE homestay
+GO
 USE homestay
 GO
 --drop database homestay
@@ -26,11 +27,11 @@ CREATE TABLE LoaiPhong (
 CREATE TABLE Phong (
     IDPhong INT PRIMARY KEY IDENTITY(1,1),
     SoPhong VARCHAR(20) NOT NULL,
-    TrangThai NVARCHAR(50) NOT NULL,
+    TrangThai int default 0,
     Gia DECIMAL(10, 2) NOT NULL,
     IDLP INT,
     HinhAnh VARCHAR(20) NOT NULL,
-    MoTa TEXT NOT NULL,
+    MoTa NVARCHAR(MAX) NOT NULL,
     FOREIGN KEY (IDLP) REFERENCES LoaiPhong(IDLP)
 );
 
@@ -89,24 +90,23 @@ INSERT INTO NhanVien (TenNV, EmailNV, SDTNV, MKNV) VALUES
 (N'Vũ Văn Hải', 'hai@example.com', '0844444444', 'matkhau9'),
 (N'Đỗ Thị Vân', 'van@example.com', '0833333333', 'matkhau10');
 
--- LoaiPhong
+-- Insert into LoaiPhong
 INSERT INTO LoaiPhong (TenLP) VALUES 
-(N'Phòng Ðon'),
-(N'Phòng Ðôi'),
-(N'Phòng Gia Ðình')
+(N'Phòng standard 1'),
+(N'Phòng standard 2'),
+(N'Phòng premium');
 
--- Phong
+-- Insert into Phong
 INSERT INTO Phong (SoPhong, TrangThai, Gia, IDLP, HinhAnh, MoTa) VALUES 
-('101', N'Trống', 500000, 1, 'room-1.jpg', N'Phòng đơn với đầy đủ tiện nghi.'),
-('102', N'Đã Đặt', 500000, 1, 'room-2.jpg', N'Phòng đơn thoải mái và yên tĩnh.'),
-('201', N'Trống', 700000, 2, 'room-3.jpg', N'Phòng đôi với không gian rộng rãi.'),
-('202', N'Đã Đặt', 700000, 2, 'room-4.jpg', N'Phòng đôi với tiện nghi cao cấp.'),
-('301', N'Trống', 1500000, 3, 'room-5.jpg', N'Phòng gia đình rộng rãi, thích hợp cho kỳ nghỉ gia đình.'),
-('302', N'Đã Đặt', 1500000, 3, 'room-6.jpg', N'Phòng gia đình với không gian thoải mái.'),
-('401', N'Trống', 3000000, 1, 'room-7.jpg', N'Phòng sang trọng và đẳng cấp.'),
-('402', N'Đã Đặt', 3000000, 2, 'room-8.jpg', N'Phòng tiện nghi hiện đại.'),
-('501', N'Trống', 2000000, 3, 'room-9.jpg', N'Phòng dịch vụ hoàn hảo.');
-
+('101', 1, 500000, 1, 'room-1.jpg', N'Phòng tiêu chuẩn với tiện nghi cơ bản.'),
+('102', 0, 500000, 1, 'room-2.jpg', N'Phòng tiêu chuẩn đã được đặt.'),
+('201', 1, 700000, 2, 'room-3.jpg', N'Phòng tiêu chuẩn nâng cao với tầm nhìn ra vườn.'),
+('202', 1, 700000, 2, 'room-4.jpg', N'Phòng tiêu chuẩn nâng cao đã được đặt.'),
+('301', 0, 1500000, 3, 'room-5.jpg', N'Phòng cao cấp với nội thất sang trọng và tầm nhìn toàn cảnh.'),
+('302', 0, 1500000, 3, 'room-6.jpg', N'Phòng cao cấp đã được đặt.'),
+('401', 0, 3000000, 1, 'room-7.jpg', N'Phòng tiêu chuẩn với tiện nghi bổ sung.'),
+('402', 1, 3000000, 2, 'room-8.jpg', N'Phòng tiêu chuẩn nâng cao đã được đặt.'),
+('501', 0, 2000000, 3, 'room-9.jpg', N'Phòng cao cấp với dịch vụ bổ sung.');
 
 -- DatPhong
 INSERT INTO DatPhong (IDKH, IDPhong, NgayDat, NgayCheckIn, NgayCheckOut, TrangThaiDatPhong) VALUES 
