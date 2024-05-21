@@ -1,18 +1,33 @@
 ﻿@model HomeStayWeb.Models.DanhGia
 
 @{
-    ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "THÔNG TIN CHI TIẾT";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>THÔNG TIN CHI TIẾT</h2>
 
 <div>
-    <h4>DanhGia</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.NoiDung)
+            Mã đánh giá:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDDanhGia)
+        </dd>
+
+        <dt>
+            Mã khách hàng:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDKH)
+        </dd>
+
+        <dt>
+            Nội dung:
         </dt>
 
         <dd>
@@ -20,24 +35,16 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NgayDanhGia)
+            Ngày đánh giá:
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.NgayDanhGia)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.KhachHang.TenKH)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.KhachHang.TenKH)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IDDanhGia }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.IDDanhGia }) |
+    @Html.ActionLink("Trở về", "Index")
 </p>

@@ -1,57 +1,70 @@
 ﻿@model HomeStayWeb.Models.NhanVien
 
 @{
-    ViewBag.Title = "Delete";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Xóa";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
+<h2>Xóa</h2>
 <div>
-    <h4>NhanVien</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TenNV)
+            Tài khoản:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TenNV)
+            @Html.DisplayFor(model => model.Taikhoan)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.EmailNV)
+            Mật khẩu:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.EmailNV)
+            @Html.DisplayFor(model => model.Matkhau)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SDTNV)
+            Tên khách hàng:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SDTNV)
+            @Html.DisplayFor(model => model.TenKhachHang)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MKNV)
+            Số điện thoại
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MKNV)
+            @Html.DisplayFor(model => model.SoDienThoai)
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            Địa chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
         </dd>
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Trở về", "Index")
         </div>
     }
 </div>
