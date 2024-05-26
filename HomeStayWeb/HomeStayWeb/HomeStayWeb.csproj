@@ -237,6 +237,7 @@
     <Content Include="Content\Css\lib\waypoints\waypoints.min.js" />
     <Content Include="Content\Css\lib\wow\wow.js" />
     <Content Include="Content\Css\lib\wow\wow.min.js" />
+    <Content Include="Content\Login\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -528,6 +529,8 @@
     <Content Include="Views\Phongs\Details.cshtml" />
     <Content Include="Views\Phongs\Edit.cshtml" />
     <Content Include="Views\Phongs\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

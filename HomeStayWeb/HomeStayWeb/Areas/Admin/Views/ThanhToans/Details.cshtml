@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "THÔNG TIN CHI TIẾT";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h2>THÔNG TIN CHI TIẾT</h2>
@@ -10,56 +11,40 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Tài khoản:
+            Mã đặt phòng:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Taikhoan)
+            @Html.DisplayFor(model => model.IDDP)
         </dd>
 
         <dt>
-            Mật khẩu:
+            Tên nhân viên:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Matkhau)
+            @Html.DisplayFor(model => model.NhanVien.TenNV)
         </dd>
 
         <dt>
-            Tên khách hàng:
+            Ngày thanh toán:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TenKhachHang)
+            @Html.DisplayFor(model => model.NgayThanhToan)
         </dd>
 
         <dt>
-            Số điện thoại
+            Số tiền:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SoDienThoai)
-        </dd>
-
-        <dt>
-            Email
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            Địa chỉ
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DiaChi)
+            @Html.DisplayFor(model => model.Sotien)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.MaKhachHang }) |
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.IDThanhToan }) |
     @Html.ActionLink("Trở về", "Index")
 </p>

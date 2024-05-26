@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Xóa";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Xóa</h2>
@@ -13,7 +14,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Taikhoan)
+            @Html.DisplayFor(model => model.SoPhong)
         </dd>
 
         <dt>
@@ -21,7 +22,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Matkhau)
+            @Html.DisplayFor(model => model.TrangThai)
         </dd>
 
         <dt>
@@ -29,7 +30,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TenKhachHang)
+            @Html.DisplayFor(model => model.Gia)
         </dd>
 
         <dt>
@@ -37,7 +38,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SoDienThoai)
+            @Html.DisplayFor(model => model.LoaiPhong.TenLP)
         </dd>
 
         <dt>
@@ -45,7 +46,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Email)
+            @Html.DisplayFor(model => model.HinhAnh)
         </dd>
 
         <dt>
@@ -53,7 +54,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DiaChi)
+            @Html.DisplayFor(model => model.MoTa)
         </dd>
 
     </dl>

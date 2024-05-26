@@ -2,6 +2,7 @@
 
 @@{
     ViewBag.Title = "THÔNG TIN CHI TIẾT";
+Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h2>THÔNG TIN CHI TIẾT</h2>
@@ -10,56 +11,56 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Tài khoản:
+            Số phòng:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Taikhoan)
+            @Html.DisplayFor(model => model.SoPhong)
         </dd>
 
         <dt>
-            Mật khẩu:
+            Trạng thái
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Matkhau)
+            @Html.DisplayFor(model => model.TrangThai)
         </dd>
 
         <dt>
-            Tên khách hàng:
+            Giá:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TenKhachHang)
+            @Html.DisplayFor(model => model.Gia)
         </dd>
 
         <dt>
-            Số điện thoại
+            Tên loại phòng:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SoDienThoai)
+            @Html.DisplayFor(model => model.LoaiPhong.TenLP)
         </dd>
 
         <dt>
-            Email
+            Hình ảnh:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Email)
+            @Html.DisplayFor(model => model.HinhAnh)
         </dd>
 
         <dt>
-            Địa chỉ
+            Mô tả:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DiaChi)
+            @Html.DisplayFor(model => model.MoTa)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.MaKhachHang }) |
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.IDPhong }) |
     @Html.ActionLink("Trở về", "Index")
 </p>

@@ -3,28 +3,24 @@
   "WorkspaceRootPath": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|d:\\hoc_tap\\doanungdungweb\\homestayweb\\homestayweb\\areas\\admin\\views\\danhgias\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|solutionrelative:homestayweb\\areas\\admin\\views\\danhgias\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|d:\\hoc_tap\\doanungdungweb\\homestayweb\\homestayweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|solutionrelative:homestayweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|d:\\hoc_tap\\doanungdungweb\\homestayweb\\homestayweb\\areas\\admin\\views\\danhgias\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|solutionrelative:homestayweb\\areas\\admin\\views\\danhgias\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|d:\\hoc_tap\\doanungdungweb\\homestayweb\\homestayweb\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|solutionrelative:homestayweb\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|d:\\hoc_tap\\doanungdungweb\\homestayweb\\homestayweb\\areas\\admin\\views\\danhgias\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|solutionrelative:homestayweb\\areas\\admin\\views\\danhgias\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|d:\\hoc_tap\\doanungdungweb\\homestayweb\\homestayweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|solutionrelative:homestayweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|d:\\hoc_tap\\doanungdungweb\\homestayweb\\homestayweb\\areas\\admin\\views\\danhgias\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|solutionrelative:homestayweb\\areas\\admin\\views\\danhgias\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|d:\\hoc_tap\\doanungdungweb\\homestayweb\\homestayweb\\views\\home\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|solutionrelative:homestayweb\\views\\home\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|d:\\hoc_tap\\doanungdungweb\\homestayweb\\homestayweb\\areas\\admin\\views\\danhgias\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|solutionrelative:homestayweb\\areas\\admin\\views\\danhgias\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|d:\\hoc_tap\\doanungdungweb\\homestayweb\\homestayweb\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|solutionrelative:homestayweb\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|d:\\hoc_tap\\doanungdungweb\\homestayweb\\homestayweb\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F94C7B3F-53B1-4E9E-AEEC-2941F91060D8}|HomeStayWeb\\HomeStayWeb.csproj|solutionrelative:homestayweb\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +30,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Edit.cshtml",
-              "RelativeDocumentMoniker": "HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Edit.cshtml",
-              "ToolTip": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Edit.cshtml",
-              "RelativeToolTip": "HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Edit.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-21T05:38:25.105Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Details.cshtml",
-              "RelativeDocumentMoniker": "HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Details.cshtml",
-              "ToolTip": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Details.cshtml",
-              "RelativeToolTip": "HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Details.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-21T05:38:21.894Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Delete.cshtml",
-              "RelativeDocumentMoniker": "HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Delete.cshtml",
-              "ToolTip": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Delete.cshtml",
-              "RelativeToolTip": "HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Delete.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-21T05:38:18.69Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "HomeStayWeb\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "HomeStayWeb\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAG4AAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-21T05:36:42.638Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Create.cshtml",
-              "RelativeDocumentMoniker": "HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Create.cshtml",
-              "ToolTip": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Create.cshtml",
-              "RelativeToolTip": "HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-21T05:35:42.01Z",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "HomeStayWeb\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "HomeStayWeb\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAwwFYAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T14:08:27.164Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Index.cshtml",
-              "RelativeDocumentMoniker": "HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Index.cshtml",
-              "ToolTip": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Index.cshtml",
-              "RelativeToolTip": "HomeStayWeb\\Areas\\Admin\\Views\\DanhGias\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAWAAAA",
+              "DocumentMoniker": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "HomeStayWeb\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "HomeStayWeb\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAIwGkAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-21T05:35:22.17Z",
+              "WhenOpened": "2024-05-26T14:32:29.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "HomeStayWeb\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "HomeStayWeb\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAIwGcAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-26T14:30:52.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Views\\Home\\Register.cshtml",
+              "RelativeDocumentMoniker": "HomeStayWeb\\Views\\Home\\Register.cshtml",
+              "ToolTip": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Views\\Home\\Register.cshtml",
+              "RelativeToolTip": "HomeStayWeb\\Views\\Home\\Register.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAABsAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-26T14:08:46.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Views\\Home\\Login.cshtml",
+              "RelativeDocumentMoniker": "HomeStayWeb\\Views\\Home\\Login.cshtml",
+              "ToolTip": "D:\\Hoc_tap\\doanungdungweb\\HomeStayWeb\\HomeStayWeb\\Views\\Home\\Login.cshtml",
+              "RelativeToolTip": "HomeStayWeb\\Views\\Home\\Login.cshtml",
+              "ViewState": "AQIAABMAAAAAAAAAAAAIwCAAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-26T14:07:39.889Z",
               "EditorCaption": ""
             }
           ]

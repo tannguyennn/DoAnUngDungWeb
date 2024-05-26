@@ -94,7 +94,14 @@
                                 <a href="~/Home/Contact" class="nav-item nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Contact" ? "active" : "")">Contact</a>
                             </div>
                             <div class="navbar-nav ml-auto py-0">
-                                <a href="~/Home/Contact" class="nav-item nav-link ">Login</a>
+                                @if (Session["id"] != null)
+                                {
+                                    <a href="@Url.Action("Details", "KhachHangs", new {id = Session["id"]})" class="btn">@Session["tenkh"]</a>
+                                }
+                                else
+                                {
+                                    <a href="~/Home_63130514/Login">Đăng nhập</a>
+                                }
                             </div>
                         </div>
                     </nav>

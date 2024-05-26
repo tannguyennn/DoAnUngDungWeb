@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Xóa";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Xóa</h2>
@@ -9,53 +10,36 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Tài khoản:
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Taikhoan)
-        </dd>
-
-        <dt>
-            Mật khẩu:
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Matkhau)
-        </dd>
-
-        <dt>
             Tên khách hàng:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TenKhachHang)
+            @Html.DisplayFor(model => model.TenKH)
         </dd>
 
         <dt>
-            Số điện thoại
+            Email khách hàng:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SoDienThoai)
+            @Html.DisplayFor(model => model.EmailKH)
         </dd>
 
         <dt>
-            Email
+            Số điện thoại khách hàng:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Email)
+            @Html.DisplayFor(model => model.SDTKH)
         </dd>
 
         <dt>
-            Địa chỉ
+            Mật khẩu khách hàng:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DiaChi)
+            @Html.DisplayFor(model => model.MKKH)
         </dd>
-
     </dl>
 
     @using (Html.BeginForm())

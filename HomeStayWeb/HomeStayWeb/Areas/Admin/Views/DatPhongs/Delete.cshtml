@@ -2,60 +2,67 @@
 
 @{
     ViewBag.Title = "Xóa";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Xóa</h2>
 <div>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
-            Tài khoản:
+            Mã đặt phòng
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Taikhoan)
+            @Html.DisplayFor(model => model.IDDP)
         </dd>
 
         <dt>
-            Mật khẩu:
+            Tên khách hàng
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Matkhau)
+            @Html.DisplayFor(model => model.KhachHang.TenKH)
         </dd>
 
         <dt>
-            Tên khách hàng:
+            Mã phòng
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TenKhachHang)
+            @Html.DisplayFor(model => model.IDPhong)
         </dd>
 
         <dt>
-            Số điện thoại
+            Ngày đặt
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SoDienThoai)
+            @Html.DisplayFor(model => model.NgayDat)
         </dd>
 
         <dt>
-            Email
+            Ngày checkin
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Email)
+            @Html.DisplayFor(model => model.NgayCheckIn)
         </dd>
 
         <dt>
-            Địa chỉ
+            Ngày checkout
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DiaChi)
+            @Html.DisplayFor(model => model.NgayCheckOut)
         </dd>
 
+        <dt>
+            Trạng thái đặt phòng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrangThaiDatPhong)
+        </dd>
     </dl>
 
     @using (Html.BeginForm())
