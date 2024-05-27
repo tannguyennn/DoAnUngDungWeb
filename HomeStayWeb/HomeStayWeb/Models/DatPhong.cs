@@ -11,7 +11,7 @@ namespace HomeStayWeb.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class DatPhong
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,7 +19,7 @@ namespace HomeStayWeb.Models
         {
             this.ThanhToans = new HashSet<ThanhToan>();
         }
-    
+
         public int IDDP { get; set; }
         public Nullable<int> IDKH { get; set; }
         public Nullable<int> IDPhong { get; set; }
@@ -27,7 +27,7 @@ namespace HomeStayWeb.Models
         public System.DateTime NgayCheckIn { get; set; }
         public System.DateTime NgayCheckOut { get; set; }
         public string TrangThaiDatPhong { get; set; }
-    
+
         public virtual KhachHang KhachHang { get; set; }
         public virtual Phong Phong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

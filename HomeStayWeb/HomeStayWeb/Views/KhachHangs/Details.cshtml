@@ -1,51 +1,28 @@
 ﻿@model HomeStayWeb.Models.KhachHang
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Chi tiết khách hàng";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Details</h2>
+<body style="font-family: Arial, sans-serif; background-color: #f8f9fa; margin: 0; padding: 0;">
+    <div class="heading" style="background-color: #007bff; color: white; padding: 20px; text-align: center;">
+        <h3>Thông tin cá nhân</h3>
+        <p style="margin: 0; font-size: 16px;"><a href="~/Home/Index" style="color: white; text-decoration: none;">Trang chủ </a> <span> / Hồ sơ</span></p>
+    </div>
+    <section class="user-details" style="max-width: 600px; margin: 40px auto; background-color: white; padding: 20px; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-radius: 8px;">
+        <div class="user" style="text-align: center;">
+            <img src="~/Images/user-icon.png" alt="User Icon" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover;">
+            <p style="margin: 10px 0; font-size: 16px;"><i class="fas fa-user" style="color: #007bff;"></i> <span>@Model.TenKH</span></p>
+            <p style="margin: 10px 0; font-size: 16px;"><i class="fas fa-phone" style="color: #007bff;"></i> <span>@Model.SDTKH</span></p>
+            <p style="margin: 10px 0; font-size: 16px;"><i class="fas fa-envelope" style="color: #007bff;"></i> <span>@Model.EmailKH</span></p>
+            <div>
+                <a href="@Url.Action("Edit", "KhachHangs", new {id = Model.IDKH})" class="btn" style="background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 20px;">Cập nhật thông tin</a>
+                <a href="@Url.Action("Logout", "Home")" class="btn" style="background-color: #dc3545; color: white; border: none; padding: 10px 20px; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 20px; margin-left: 10px;">Đăng xuất</a>
+            </div>
+        </div>
+    </section>
+    <div style="height: 100px;"></div>
+</body>
 
-<div>
-    <h4>KhachHang</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TenKH)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TenKH)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EmailKH)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmailKH)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SDTKH)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SDTKH)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MKKH)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MKKH)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IDKH }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -1,0 +1,64 @@
+﻿@model IEnumerable < HomeStayWeb.Models.DatPhong>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayDat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayCheckIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayCheckOut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrangThaiDatPhong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KhachHang.TenKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phong.SoPhong)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayDat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayCheckIn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayCheckOut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrangThaiDatPhong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KhachHang.TenKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phong.SoPhong)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDDP }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDDP }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDDP })
+        </td>
+    </tr>
+}
+
+</table>

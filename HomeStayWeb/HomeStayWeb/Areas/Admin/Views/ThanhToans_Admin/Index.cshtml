@@ -64,9 +64,9 @@
         grid.Column("NhanVien.TenNV","Tên nhân viên"),
         grid.Column("NgayThanhToan","Ngày thanh toán"),
         grid.Column("Sotien","Số tiền"),
-        grid.Column(format: (item) => Html.ActionLink("Xem chi tiết", "Details","ThanhToans", new { id = item.IDThanhToan },"ThanhToansController")),
-        grid.Column(format: (item) => Html.ActionLink("Chỉnh sửa", "Edit","ThanhToans", new { id = item.IDThanhToan },"ThanhToansController")),
-        grid.Column(format: (item) => Html.ActionLink("Xóa", "Delete","ThanhToans", new { id = item.IDThanhToan },"ThanhToansController")),
+        grid.Column(format: (item) => Html.ActionLink("Xem chi tiết", "Details","ThanhToans_Admin", new { id = item.IDThanhToan },"ThanhToans_AdminController")),
+        grid.Column(format: (item) => Html.ActionLink("Chỉnh sửa", "Edit","ThanhToans_Admin", new { id = item.IDThanhToan },"ThanhToans_AdminController")),
+        grid.Column(format: (item) => Html.ActionLink("Xóa", "Delete","ThanhToans_Admin", new { id = item.IDThanhToan },"ThanhToans_AdminController")),
         }
        )
     </div>

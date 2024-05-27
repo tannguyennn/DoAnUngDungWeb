@@ -10,107 +10,116 @@ using HomeStayWeb.Models;
 
 namespace HomeStayWeb.Areas.Admin.Controllers
 {
-    public class KhachHangsController : Controller
+    public class DatPhongs_AdminController : Controller
     {
         private homestayEntities2 db = new homestayEntities2();
 
-        // GET: Admin/KhachHangs
+        // GET: Admin/DatPhongs
         public ActionResult Index()
         {
-            return View(db.KhachHangs.ToList());
+            var datPhongs = db.DatPhongs.Include(d => d.KhachHang).Include(d => d.Phong);
+            return View(datPhongs.ToList());
         }
 
-        // GET: Admin/KhachHangs/Details/5
+        // GET: Admin/DatPhongs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KhachHang khachHang = db.KhachHangs.Find(id);
-            if (khachHang == null)
+            DatPhong datPhong = db.DatPhongs.Find(id);
+            if (datPhong == null)
             {
                 return HttpNotFound();
             }
-            return View(khachHang);
+            return View(datPhong);
         }
 
-        // GET: Admin/KhachHangs/Create
+        // GET: Admin/DatPhongs/Create
         public ActionResult Create()
         {
+            ViewBag.IDKH = new SelectList(db.KhachHangs, "IDKH", "TenKH");
+            ViewBag.IDPhong = new SelectList(db.Phongs, "IDPhong", "SoPhong");
             return View();
         }
 
-        // POST: Admin/KhachHangs/Create
+        // POST: Admin/DatPhongs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDKH,TenKH,EmailKH,SDTKH,MKKH")] KhachHang khachHang)
+        public ActionResult Create([Bind(Include = "IDDP,IDKH,IDPhong,NgayDat,NgayCheckIn,NgayCheckOut,TrangThaiDatPhong")] DatPhong datPhong)
         {
             if (ModelState.IsValid)
             {
-                db.KhachHangs.Add(khachHang);
+                db.DatPhongs.Add(datPhong);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(khachHang);
+            ViewBag.IDKH = new SelectList(db.KhachHangs, "IDKH", "TenKH", datPhong.IDKH);
+            ViewBag.IDPhong = new SelectList(db.Phongs, "IDPhong", "SoPhong", datPhong.IDPhong);
+            return View(datPhong);
         }
 
-        // GET: Admin/KhachHangs/Edit/5
+        // GET: Admin/DatPhongs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KhachHang khachHang = db.KhachHangs.Find(id);
-            if (khachHang == null)
+            DatPhong datPhong = db.DatPhongs.Find(id);
+            if (datPhong == null)
             {
                 return HttpNotFound();
             }
-            return View(khachHang);
+            ViewBag.IDKH = new SelectList(db.KhachHangs, "IDKH", "TenKH", datPhong.IDKH);
+            ViewBag.IDPhong = new SelectList(db.Phongs, "IDPhong", "SoPhong", datPhong.IDPhong);
+            return View(datPhong);
         }
 
-        // POST: Admin/KhachHangs/Edit/5
+        // POST: Admin/DatPhongs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDKH,TenKH,EmailKH,SDTKH,MKKH")] KhachHang khachHang)
+        public ActionResult Edit([Bind(Include = "IDDP,IDKH,IDPhong,NgayDat,NgayCheckIn,NgayCheckOut,TrangThaiDatPhong")] DatPhong datPhong)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(khachHang).State = EntityState.Modified;
+                db.Entry(datPhong).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(khachHang);
+            ViewBag.IDKH = new SelectList(db.KhachHangs, "IDKH", "TenKH", datPhong.IDKH);
+            ViewBag.IDPhong = new SelectList(db.Phongs, "IDPhong", "SoPhong", datPhong.IDPhong);
+            return View(datPhong);
         }
 
-        // GET: Admin/KhachHangs/Delete/5
+        // GET: Admin/DatPhongs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KhachHang khachHang = db.KhachHangs.Find(id);
-            if (khachHang == null)
+            DatPhong datPhong = db.DatPhongs.Find(id);
+            if (datPhong == null)
             {
                 return HttpNotFound();
             }
-            return View(khachHang);
+            return View(datPhong);
         }
 
-        // POST: Admin/KhachHangs/Delete/5
+        // POST: Admin/DatPhongs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            KhachHang khachHang = db.KhachHangs.Find(id);
-            db.KhachHangs.Remove(khachHang);
+            DatPhong datPhong = db.DatPhongs.Find(id);
+            db.DatPhongs.Remove(datPhong);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

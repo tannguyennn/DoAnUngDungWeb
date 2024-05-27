@@ -10,107 +10,112 @@ using HomeStayWeb.Models;
 
 namespace HomeStayWeb.Areas.Admin.Controllers
 {
-    public class LoaiPhongsController : Controller
+    public class Phongs_AdminController : Controller
     {
         private homestayEntities2 db = new homestayEntities2();
 
-        // GET: Admin/LoaiPhongs
+        // GET: Admin/Phongs
         public ActionResult Index()
         {
-            return View(db.LoaiPhongs.ToList());
+            var phongs = db.Phongs.Include(p => p.LoaiPhong);
+            return View(phongs.ToList());
         }
 
-        // GET: Admin/LoaiPhongs/Details/5
+        // GET: Admin/Phongs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LoaiPhong loaiPhong = db.LoaiPhongs.Find(id);
-            if (loaiPhong == null)
+            Phong phong = db.Phongs.Find(id);
+            if (phong == null)
             {
                 return HttpNotFound();
             }
-            return View(loaiPhong);
+            return View(phong);
         }
 
-        // GET: Admin/LoaiPhongs/Create
+        // GET: Admin/Phongs/Create
         public ActionResult Create()
         {
+            ViewBag.IDLP = new SelectList(db.LoaiPhongs, "IDLP", "TenLP");
             return View();
         }
 
-        // POST: Admin/LoaiPhongs/Create
+        // POST: Admin/Phongs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDLP,TenLP")] LoaiPhong loaiPhong)
+        public ActionResult Create([Bind(Include = "IDPhong,SoPhong,TrangThai,Gia,IDLP,HinhAnh,MoTa")] Phong phong)
         {
             if (ModelState.IsValid)
             {
-                db.LoaiPhongs.Add(loaiPhong);
+                db.Phongs.Add(phong);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(loaiPhong);
+            ViewBag.IDLP = new SelectList(db.LoaiPhongs, "IDLP", "TenLP", phong.IDLP);
+            return View(phong);
         }
 
-        // GET: Admin/LoaiPhongs/Edit/5
+        // GET: Admin/Phongs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LoaiPhong loaiPhong = db.LoaiPhongs.Find(id);
-            if (loaiPhong == null)
+            Phong phong = db.Phongs.Find(id);
+            if (phong == null)
             {
                 return HttpNotFound();
             }
-            return View(loaiPhong);
+            ViewBag.IDLP = new SelectList(db.LoaiPhongs, "IDLP", "TenLP", phong.IDLP);
+            return View(phong);
         }
 
-        // POST: Admin/LoaiPhongs/Edit/5
+        // POST: Admin/Phongs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDLP,TenLP")] LoaiPhong loaiPhong)
+        public ActionResult Edit([Bind(Include = "IDPhong,SoPhong,TrangThai,Gia,IDLP,HinhAnh,MoTa")] Phong phong)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(loaiPhong).State = EntityState.Modified;
+                db.Entry(phong).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(loaiPhong);
+            ViewBag.IDLP = new SelectList(db.LoaiPhongs, "IDLP", "TenLP", phong.IDLP);
+            return View(phong);
         }
 
-        // GET: Admin/LoaiPhongs/Delete/5
+        // GET: Admin/Phongs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LoaiPhong loaiPhong = db.LoaiPhongs.Find(id);
-            if (loaiPhong == null)
+            Phong phong = db.Phongs.Find(id);
+            if (phong == null)
             {
                 return HttpNotFound();
             }
-            return View(loaiPhong);
+            return View(phong);
         }
 
-        // POST: Admin/LoaiPhongs/Delete/5
+        // POST: Admin/Phongs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            LoaiPhong loaiPhong = db.LoaiPhongs.Find(id);
-            db.LoaiPhongs.Remove(loaiPhong);
+            Phong phong = db.Phongs.Find(id);
+            db.Phongs.Remove(phong);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

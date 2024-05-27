@@ -98,5 +98,18 @@ namespace HomeStayWeb.Controllers
             }
             return View();
         }
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Index");
+        }
+        public ActionResult Ourteam()
+        {
+            return View();
+        }
+        public ActionResult Testimonial()
+        {
+            return View();
+        }
     }
 }

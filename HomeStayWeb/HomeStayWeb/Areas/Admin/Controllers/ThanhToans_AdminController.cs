@@ -10,112 +10,116 @@ using HomeStayWeb.Models;
 
 namespace HomeStayWeb.Areas.Admin.Controllers
 {
-    public class PhongsController : Controller
+    public class ThanhToans_AdminController : Controller
     {
         private homestayEntities2 db = new homestayEntities2();
 
-        // GET: Admin/Phongs
+        // GET: Admin/ThanhToans
         public ActionResult Index()
         {
-            var phongs = db.Phongs.Include(p => p.LoaiPhong);
-            return View(phongs.ToList());
+            var thanhToans = db.ThanhToans.Include(t => t.DatPhong).Include(t => t.NhanVien);
+            return View(thanhToans.ToList());
         }
 
-        // GET: Admin/Phongs/Details/5
+        // GET: Admin/ThanhToans/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Phong phong = db.Phongs.Find(id);
-            if (phong == null)
+            ThanhToan thanhToan = db.ThanhToans.Find(id);
+            if (thanhToan == null)
             {
                 return HttpNotFound();
             }
-            return View(phong);
+            return View(thanhToan);
         }
 
-        // GET: Admin/Phongs/Create
+        // GET: Admin/ThanhToans/Create
         public ActionResult Create()
         {
-            ViewBag.IDLP = new SelectList(db.LoaiPhongs, "IDLP", "TenLP");
+            ViewBag.IDDP = new SelectList(db.DatPhongs, "IDDP", "TrangThaiDatPhong");
+            ViewBag.IDNV = new SelectList(db.NhanViens, "IDNV", "TenNV");
             return View();
         }
 
-        // POST: Admin/Phongs/Create
+        // POST: Admin/ThanhToans/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDPhong,SoPhong,TrangThai,Gia,IDLP,HinhAnh,MoTa")] Phong phong)
+        public ActionResult Create([Bind(Include = "IDThanhToan,IDDP,IDNV,NgayThanhToan,Sotien")] ThanhToan thanhToan)
         {
             if (ModelState.IsValid)
             {
-                db.Phongs.Add(phong);
+                db.ThanhToans.Add(thanhToan);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IDLP = new SelectList(db.LoaiPhongs, "IDLP", "TenLP", phong.IDLP);
-            return View(phong);
+            ViewBag.IDDP = new SelectList(db.DatPhongs, "IDDP", "TrangThaiDatPhong", thanhToan.IDDP);
+            ViewBag.IDNV = new SelectList(db.NhanViens, "IDNV", "TenNV", thanhToan.IDNV);
+            return View(thanhToan);
         }
 
-        // GET: Admin/Phongs/Edit/5
+        // GET: Admin/ThanhToans/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Phong phong = db.Phongs.Find(id);
-            if (phong == null)
+            ThanhToan thanhToan = db.ThanhToans.Find(id);
+            if (thanhToan == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.IDLP = new SelectList(db.LoaiPhongs, "IDLP", "TenLP", phong.IDLP);
-            return View(phong);
+            ViewBag.IDDP = new SelectList(db.DatPhongs, "IDDP", "TrangThaiDatPhong", thanhToan.IDDP);
+            ViewBag.IDNV = new SelectList(db.NhanViens, "IDNV", "TenNV", thanhToan.IDNV);
+            return View(thanhToan);
         }
 
-        // POST: Admin/Phongs/Edit/5
+        // POST: Admin/ThanhToans/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDPhong,SoPhong,TrangThai,Gia,IDLP,HinhAnh,MoTa")] Phong phong)
+        public ActionResult Edit([Bind(Include = "IDThanhToan,IDDP,IDNV,NgayThanhToan,Sotien")] ThanhToan thanhToan)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(phong).State = EntityState.Modified;
+                db.Entry(thanhToan).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IDLP = new SelectList(db.LoaiPhongs, "IDLP", "TenLP", phong.IDLP);
-            return View(phong);
+            ViewBag.IDDP = new SelectList(db.DatPhongs, "IDDP", "TrangThaiDatPhong", thanhToan.IDDP);
+            ViewBag.IDNV = new SelectList(db.NhanViens, "IDNV", "TenNV", thanhToan.IDNV);
+            return View(thanhToan);
         }
 
-        // GET: Admin/Phongs/Delete/5
+        // GET: Admin/ThanhToans/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Phong phong = db.Phongs.Find(id);
-            if (phong == null)
+            ThanhToan thanhToan = db.ThanhToans.Find(id);
+            if (thanhToan == null)
             {
                 return HttpNotFound();
             }
-            return View(phong);
+            return View(thanhToan);
         }
 
-        // POST: Admin/Phongs/Delete/5
+        // POST: Admin/ThanhToans/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Phong phong = db.Phongs.Find(id);
-            db.Phongs.Remove(phong);
+            ThanhToan thanhToan = db.ThanhToans.Find(id);
+            db.ThanhToans.Remove(thanhToan);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -10,7 +10,7 @@ using HomeStayWeb.Models;
 
 namespace HomeStayWeb.Areas.Admin.Controllers
 {
-    public class NhanViensController : Controller
+    public class NhanViens_AdminController : Controller
     {
         private homestayEntities2 db = new homestayEntities2();
 

@@ -1,10 +1,11 @@
-﻿@model IEnumerable<HomeStayWeb.Models.DanhGia>
+﻿@model IEnumerable<HomeStayWeb.Models.LoaiPhong>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
-    var grid = new WebGrid(Model, canPage: true, defaultSort: "IDDanhGia", rowsPerPage: 10);
+    var grid = new WebGrid(Model, canPage: true, defaultSort: "IDLP", rowsPerPage: 10);
 }
-<h2>DANH SÁCH ĐÁNH GIÁ</h2>
+<h2>DANH SÁCH LOẠI PHÒNG</h2>
 <p>
     @Html.ActionLink("Thêm mới", "Create")
 </p>
@@ -48,7 +49,7 @@
 </head>
 <body>
     <div>
-        @using (Html.BeginForm("Index", "DanhGias", FormMethod.Get))
+        @using (Html.BeginForm("Index", "LoaiPhongs_Admin", FormMethod.Get))
         {
             @Html.AntiForgeryToken()
 
@@ -56,17 +57,17 @@
             <table class="table1" align="center">
                 <tr>
                     <td>
-                        <div> Mã đánh giá</div>
+                        <div> Mã loại phòng</div>
                     </td>
                     <td>
-                        <input type="text" name="maNV" value="@ViewBag.IDDanhGia" />
+                        <input type="text" name="maNV" value="@ViewBag.IDLP" />
                     </td>
 
                 </tr>
                 <tr>
-                    <td>Họ tên khách hàng đánh giá</td>
+                    <td>Tên loại phòng</td>
                     <td>
-                        <input type="text" name="tenNV" value="@ViewBag.TenKH" />
+                        <input type="text" name="tenNV" value="@ViewBag.TenLP" />
                     </td>
 
                 </tr>
@@ -78,7 +79,7 @@
                         <input type="submit" name="submit" value="Tìm kiếm" style="margin-left: 5px;width:100px;
             background-color: blue;color:white" />
                         <input type="button" name="Nhapmoi" value="Nhập mới" style="margin-left: 5px;width:100px;
-            background-color: blue;color:white" onclick="location.href='@Url.Action("Index", "DanhGias/Index")'" />
+            background-color: blue;color:white" onclick="location.href='@Url.Action("Index", "LoaiPhongs_Admin/Index")'" />
 
                     </td>
                 </tr>
@@ -96,13 +97,11 @@
               columns: new[]  // colums in grid
              {
          grid.Column("#",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
-        grid.Column("IDDanhGia","Mã đánh giá"),
-        grid.Column("KhachHang.TenKH","Tên khách hàng"),
-        grid.Column("NoiDung","Nội dung"),
-        grid.Column("NgayDanhGia","Ngày đánh giá"),
-        grid.Column(format: (item) => Html.ActionLink("Xem chi tiết", "Details","DanhGias", new { id = item.IDDanhGia },"DanhGiasController")),
-        grid.Column(format: (item) => Html.ActionLink("Chỉnh sửa", "Edit","DanhGias", new { id = item.IDDanhGia },"DanhGiasController")),
-        grid.Column(format: (item) => Html.ActionLink("Xóa", "Delete","DanhGias", new { id = item.IDDanhGia },"DanhGiasController")),
+        grid.Column("IDLP","Mã loại phòng"),
+        grid.Column("TenLP","Tên loại phòng"),
+        grid.Column(format: (item) => Html.ActionLink("Xem chi tiết", "Details","LoaiPhongs_Admin", new { id = item.IDLP },"LoaiPhongs_AdminController")),
+        grid.Column(format: (item) => Html.ActionLink("Chỉnh sửa", "Edit","LoaiPhongs_Admin", new { id = item.IDLP },"LoaiPhongs_AdminController")),
+        grid.Column(format: (item) => Html.ActionLink("Xóa", "Delete","LoaiPhongs_Admin", new { id = item.IDLP },"LoaiPhongs_AdminController")),
         }
        )
     </div>

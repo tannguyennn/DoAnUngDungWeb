@@ -10,112 +10,107 @@ using HomeStayWeb.Models;
 
 namespace HomeStayWeb.Areas.Admin.Controllers
 {
-    public class DanhGiasController : Controller
+    public class LoaiPhongs_AdminController : Controller
     {
         private homestayEntities2 db = new homestayEntities2();
 
-        // GET: Admin/DanhGias
+        // GET: Admin/LoaiPhongs
         public ActionResult Index()
         {
-            var danhGias = db.DanhGias.Include(d => d.KhachHang);
-            return View(danhGias.ToList());
+            return View(db.LoaiPhongs.ToList());
         }
 
-        // GET: Admin/DanhGias/Details/5
+        // GET: Admin/LoaiPhongs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DanhGia danhGia = db.DanhGias.Find(id);
-            if (danhGia == null)
+            LoaiPhong loaiPhong = db.LoaiPhongs.Find(id);
+            if (loaiPhong == null)
             {
                 return HttpNotFound();
             }
-            return View(danhGia);
+            return View(loaiPhong);
         }
 
-        // GET: Admin/DanhGias/Create
+        // GET: Admin/LoaiPhongs/Create
         public ActionResult Create()
         {
-            ViewBag.IDKH = new SelectList(db.KhachHangs, "IDKH", "TenKH");
             return View();
         }
 
-        // POST: Admin/DanhGias/Create
+        // POST: Admin/LoaiPhongs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDDanhGia,IDKH,NoiDung,NgayDanhGia")] DanhGia danhGia)
+        public ActionResult Create([Bind(Include = "IDLP,TenLP")] LoaiPhong loaiPhong)
         {
             if (ModelState.IsValid)
             {
-                db.DanhGias.Add(danhGia);
+                db.LoaiPhongs.Add(loaiPhong);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IDKH = new SelectList(db.KhachHangs, "IDKH", "TenKH", danhGia.IDKH);
-            return View(danhGia);
+            return View(loaiPhong);
         }
 
-        // GET: Admin/DanhGias/Edit/5
+        // GET: Admin/LoaiPhongs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DanhGia danhGia = db.DanhGias.Find(id);
-            if (danhGia == null)
+            LoaiPhong loaiPhong = db.LoaiPhongs.Find(id);
+            if (loaiPhong == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.IDKH = new SelectList(db.KhachHangs, "IDKH", "TenKH", danhGia.IDKH);
-            return View(danhGia);
+            return View(loaiPhong);
         }
 
-        // POST: Admin/DanhGias/Edit/5
+        // POST: Admin/LoaiPhongs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDDanhGia,IDKH,NoiDung,NgayDanhGia")] DanhGia danhGia)
+        public ActionResult Edit([Bind(Include = "IDLP,TenLP")] LoaiPhong loaiPhong)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(danhGia).State = EntityState.Modified;
+                db.Entry(loaiPhong).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IDKH = new SelectList(db.KhachHangs, "IDKH", "TenKH", danhGia.IDKH);
-            return View(danhGia);
+            return View(loaiPhong);
         }
 
-        // GET: Admin/DanhGias/Delete/5
+        // GET: Admin/LoaiPhongs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DanhGia danhGia = db.DanhGias.Find(id);
-            if (danhGia == null)
+            LoaiPhong loaiPhong = db.LoaiPhongs.Find(id);
+            if (loaiPhong == null)
             {
                 return HttpNotFound();
             }
-            return View(danhGia);
+            return View(loaiPhong);
         }
 
-        // POST: Admin/DanhGias/Delete/5
+        // POST: Admin/LoaiPhongs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            DanhGia danhGia = db.DanhGias.Find(id);
-            db.DanhGias.Remove(danhGia);
+            LoaiPhong loaiPhong = db.LoaiPhongs.Find(id);
+            db.LoaiPhongs.Remove(loaiPhong);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
