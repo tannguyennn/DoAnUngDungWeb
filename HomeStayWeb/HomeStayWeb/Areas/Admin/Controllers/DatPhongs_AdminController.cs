@@ -132,5 +132,28 @@ namespace HomeStayWeb.Areas.Admin.Controllers
             }
             base.Dispose(disposing);
         }
+        [HttpPost]
+        public ActionResult Approve(int id)
+        {
+            var datPhong = db.DatPhongs.Find(id);
+            if (datPhong != null)
+            {
+                datPhong.TrangThaiDatPhong = "Đã duyệt";
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Cancel(int id)
+        {
+            var datPhong = db.DatPhongs.Find(id);
+            if (datPhong != null)
+            {
+                datPhong.TrangThaiDatPhong = "Hủy";
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -18,10 +18,10 @@
         @Html.HiddenFor(model => model.IDDP)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.KhachHang.TenKH, "Tên khách hàng", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IDKH, "Mã khách hàng", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.KhachHang.TenKH, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.KhachHang.TenKH, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.IDKH, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IDKH, "", new { @class = "text-danger" })
             </div>
         </div>
 
