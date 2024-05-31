@@ -31,5 +31,6 @@ namespace HomeStayWeb.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DatPhong> DatPhongs { get; set; }
         public virtual LoaiPhong LoaiPhong { get; set; }
+
     }
 }

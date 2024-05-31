@@ -12,7 +12,10 @@ namespace HomeStayWeb.Controllers
         private homestayEntities2 db = new homestayEntities2();
         public ActionResult Index()
         {
-            return View(db.Phongs.ToList());
+            ViewData["PhongList"] = db.Phongs.ToList();
+            ViewBag.DanhGiaList = db.DanhGias.ToList();
+
+            return View();
         }
 
         public ActionResult About()
@@ -32,7 +35,7 @@ namespace HomeStayWeb.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
-            return View();
+            return View(db.DanhGias.ToList());
         }
         public ActionResult Login()
         {
@@ -51,7 +54,7 @@ namespace HomeStayWeb.Controllers
                 Session["tennv"] = data.FirstOrDefault().TenNV;
                 Session["emailnv"] = data.FirstOrDefault().EmailNV;
                 Session["id"] = data.FirstOrDefault().IDNV;
-                return RedirectToAction("Index", "Admin/NhanViens");
+                return RedirectToAction("Index", "Admin/NhanViens_Admin");
             }
             var data2 = db.KhachHangs.Where(s => s.EmailKH.Equals(email) && s.MKKH.Equals(password));
             if (data2.Count() > 0)
@@ -109,7 +112,7 @@ namespace HomeStayWeb.Controllers
         }
         public ActionResult Testimonial()
         {
-            return View();
+            return View(db.DanhGias.ToList());
         }
     }
 }
