@@ -512,11 +512,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\ThanhToans\Create.cshtml" />
-    <Content Include="Views\ThanhToans\Delete.cshtml" />
-    <Content Include="Views\ThanhToans\Details.cshtml" />
-    <Content Include="Views\ThanhToans\Edit.cshtml" />
-    <Content Include="Views\ThanhToans\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Services.cshtml" />
